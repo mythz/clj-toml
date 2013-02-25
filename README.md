@@ -76,7 +76,10 @@ data = [ [\"gamma\", \"delta\"], [1, 2] ] # just an update to make sure parsers 
 
 Will print out this native LISP data-structure:
 
-    {clients {data [[gamma delta] [1 2]]}, servers.beta {dc eqdc10, ip 10.0.0.2}, servers.alpha {dc eqdc10, ip 10.0.0.1}, servers {}, database {enabled true, connection_max 5000, ports [8001 8001 8002], server 192.168.1.1}, owner {dob 1979-05-27T07:32:00Z, bio GitHub Cofounder & CEO\nLikes tater tots and beer., organization GitHub, name Tom Preston-Werner}, title TOML Example}
+    {clients {data [[gamma delta] [1 2]]}, servers.beta {dc eqdc10, ip 10.0.0.2}, servers.alpha {dc eqdc10, ip 10.0.0.1}, servers {}, 
+    database {enabled true, connection_max 5000, ports [8001 8001 8002], server 192.168.1.1}, 
+    owner {dob 1979-05-27T07:32:00Z, bio GitHub Cofounder & CEO\nLikes tater tots and beer., organization GitHub, name Tom Preston-Werner}, 
+    title TOML Example}
 
 ### Enjoy!
 
