@@ -1,9 +1,3 @@
-clj-toml - A TOML parser in Clojure
-========
-
-As the parser is only 30 LOC I'll just paste the entire source code here:
-
-```clojure
 (def re-keyval #"^\s*(\w+)\s*=?(.*)")
 (def re-group #"^\s*\[([^\]]+)].*")
 (defn clean-lines [coll]
@@ -34,11 +28,8 @@ As the parser is only 30 LOC I'll just paste the entire source code here:
               (assoc d (nth m 1) (parse-value (nth m 2))) ;;key=value
               d) ;;ignore
             (drop 1 lines)))))))
-```
 
-Which when called with:
 
-```clojure
 (def toml-example "
 # This is a TOML document. Boom.
 
@@ -72,11 +63,3 @@ data = [ [\"gamma\", \"delta\"], [1, 2] ] # just an update to make sure parsers 
 ")
 
 (println (parse toml-example))
-```
-
-Will print out this native LISP data-structure:
-
-    {clients {data [[gamma delta] [1 2]]}, servers.beta {dc eqdc10, ip 10.0.0.2}, servers.alpha {dc eqdc10, ip 10.0.0.1}, servers {}, database {enabled true, connection_max 5000, ports [8001 8001 8002], server 192.168.1.1}, owner {dob 1979-05-27T07:32:00Z, bio GitHub Cofounder & CEO\nLikes tater tots and beer., organization GitHub, name Tom Preston-Werner}, title TOML Example}
-
-### Enjoy!
-
